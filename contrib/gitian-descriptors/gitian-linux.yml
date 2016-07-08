@@ -1,12 +1,11 @@
 ---
-name: "brexit"
+name: "brexitcoin"
 suites:
 - "precise"
 architectures:
 - "i386"
 - "amd64"
 packages: 
-- "libdb4.8++-dev"
 - "qt4-qmake"
 - "libqt4-dev"
 - "libboost-system-dev"
@@ -43,6 +42,7 @@ script: |
   cd brexit
   mkdir -p $OUTDIR/src
   git archive HEAD | tar -x -C $OUTDIR/src
+  sleep 300
   cp $OUTDIR/src/doc/README $OUTDIR
   cp $OUTDIR/src/COPYING $OUTDIR
   cd src
